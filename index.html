@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+
+     <script>
+
+function Httpreq(){
+
+var  Req = new XMLHttpRequest();
+Req.open("POST","http://192.168.43.156/cgi-bin/code.py?DataSend="+document.getElementById("input").value,"true");
+Req.send();
+
+Req.onload = function  ()
+
+{
+
+  document.getElementById("output").innerHTML=Req.responseText;
+}
+}
+
+
+    </script>
+
+     </head>
+
+<body>
+
+
+        <div><input id="input"><button onclick="Httpreq()">RUN</button></div>
+
+        <div ><pre><p id="output"></p></pre></div>
+
+</body>
+
+
+</html>
